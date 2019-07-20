@@ -5,16 +5,22 @@
     <title>M.T. Williams - Business Card</title>
     <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="/script.js"></script>
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
     <!-- Embedded A-Frame scene with arjs tracking -->
     <a-scene embedded arjs='trackingMethod: best'>
-        <!-- Simple box for testing -->
-        <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
         <!-- Camera which will move according to the marker position
-        using Hiro marker preset -->
-        <a-marker-camera preset='hiro'></a-marker-camera>
+        using Hiro marker preset, and allows mouse to be used as cursor -->
+        <a-marker-camera preset='hiro' cursor="rayOrigin: mouse;">
+            <!-- Github link -->
+            <a-box position='1 0.5 0' scale="0.5 0.5 0.5" material="color: red;" action-on-click="url: https://orangegrove1955.github.io/"></a-box>
+            <!-- Linkedin link -->
+            <a-box position='-1 0.5 0' scale="0.5 0.5 0.5" material="color: blue;" action-on-click="url: https://www.linkedin.com/in/matthew-williams-00294015a/"></a-box>
+            <!-- Email link -->
+            <a-box position='0 0.5 0' scale="0.5 0.5 0.5" action-on-click="action: mail"></a-box>
+        </a-marker-camera>
     </a-scene>
 </body>
 
